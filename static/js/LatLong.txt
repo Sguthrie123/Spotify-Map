@@ -1,0 +1,62 @@
+Country,Code,Latitude,Longitude,Playlist
+Argentine Republic,AR,-34,-64,37i9dQZEVXbMMy2roB9myp
+Republic of Austria,AT,47.33333,13.33333,37i9dQZEVXbKNHh6NIXu36
+Commonwealth of Australia,AU,-25,135,37i9dQZEVXbJPcfkRz0wJ0
+Kingdom of Belgium,BE,50.75,4.5,37i9dQZEVXbJNSeeHswcKB
+Republic of Bulgaria,BG,42.66667,25.25,37i9dQZEVXbNfM2w2mq1B8
+Plurinational State of Bolivia,BO,-17,-65,37i9dQZEVXbJqfMFK4d691
+Federative Republic of Brazil,BR,-10,-55,37i9dQZEVXbMXbN3EUUhlg
+Canada,CA,60.10867,-113.64258,37i9dQZEVXbKj23U1GF4IR
+Switzerland,CH,47.00016,8.01427,37i9dQZEVXbJiyhoAPEfMK
+Republic of Chile,CL,-30,-71,37i9dQZEVXbL0GavIqMTeb
+People’s Republic of China,CN,35,105,37i9dQZEVXbLwpL8TjsxOG
+Republic of Colombia,CO,4,-73.25,37i9dQZEVXbOa2lmxNORXQ
+Republic of Costa Rica,CR,10,-84,37i9dQZEVXbMZAjGMynsQX
+Czechia,CZ,49.75,15,37i9dQZEVXbIP3c3fqVrJY
+Federal Republic of Germany,DE,51.5,10.5,37i9dQZEVXbJiZcmkrIHGU
+Kingdom of Denmark,DK,56,10,37i9dQZEVXbL3J0k32lWnN
+Dominican Republic,DO,19,-70.66667,37i9dQZEVXbKAbrMR8uuf7
+Republic of Ecuador,EC,-1.25,-78.25,37i9dQZEVXbJlM6nvL1nD1
+Republic of Estonia,EE,59,26,37i9dQZEVXbLesry2Qw2xS
+Kingdom of Spain,ES,40,-4,37i9dQZEVXbNFJfN1Vw8d9
+Republic of Finland,FI,64,26,37i9dQZEVXbMxcczTSoGwZ
+Republic of France,FR,46,2,37i9dQZEVXbIPWwFssbupI
+United Kingdom of Great Britain and Northern Ireland,GB,54.75844,-2.69531,37i9dQZEVXbLnolsZ8PSNw
+Republic of Guatemala,GT,15.5,-90.25,37i9dQZEVXbLy5tBFyQvd4
+Republic of Honduras,HN,15,-86.5,37i9dQZEVXbJp9wcIM9Eo5
+Hungary,HU,47,20,37i9dQZEVXbNHwMxAkvmF8
+Republic of Indonesia,ID,-5,120,37i9dQZEVXbObFQZ3JLcXt
+Ireland,IE,53,-8,37i9dQZEVXbKM896FDX8L1
+State of Israel,IL,31.5,34.75,37i9dQZEVXbJ6IpvItkve3
+Republic of India,IN,22,79,37i9dQZEVXbLZ52XmnySJg
+Republic of Iceland,IS,65,-18,37i9dQZEVXbKMzVsSGQ49S
+Repubblica Italiana,IT,42.83333,12.83333,37i9dQZEVXbIQnj7RRhdSX
+Japan,JP,35.68536,139.75309,37i9dQZEVXbKXQ4mDTEBXq
+Republic of Lithuania,LT,55.41667,24,37i9dQZEVXbMx56Rdq5lwc
+Grand Duchy of Luxembourg,LU,49.75,6.16667,37i9dQZEVXbKGcyg6TFGx6
+Republic of Latvia,LV,57,25,37i9dQZEVXbJWuzDrTxbKS
+Republic of Malta,MT,35.91667,14.43333,37i9dQZEVXbMD2H5HJqmx9
+Mexico,MX,23,-102,37i9dQZEVXbO3qyFxbkOE1
+Malaysia,MY,2.5,112.5,37i9dQZEVXbJlfUljuZExa
+Republic of Nicaragua,NI,13,-85,37i9dQZEVXbISk8kxnzfCq
+Kingdom of the Netherlands,NL,52.25,5.75,37i9dQZEVXbKCF6dqVpDkS
+Kingdom of Norway,NO,62,10,37i9dQZEVXbJvfa0Yxg7E7
+New Zealand,NZ,-42,174,37i9dQZEVXbM8SIrkERIYl
+Republic of Panama,PA,9,-80,37i9dQZEVXbKypXHVwk1f0
+Republic of Peru,PE,-10,-75.25,37i9dQZEVXbJfdy5b0KP7W
+Republic of the Philippines,PH,13,122,37i9dQZEVXbNBz9cRCSFkY
+Republic of Poland,PL,52,20,37i9dQZEVXbN6itCcaL3Tt
+Portuguese Republic,PT,39.6945,-8.13057,37i9dQZEVXbKyJS56d1pgi
+Republic of Paraguay,PY,-23.33333,-58,37i9dQZEVXbNOUPGj7tW6T
+România,RO,46,25,37i9dQZEVXbNZbJ6TZelCq
+Kingdom of Sweden,SE,62,15,37i9dQZEVXbLoATJ81JYXz
+Republic of Singapore,SG,1.36667,103.8,37i9dQZEVXbK4gjvS1FjPY
+Slovak Republic,SK,48.66667,19.5,37i9dQZEVXbKIVTPX9a2Sb
+Republic of El Salvador,SV,13.83333,-88.91667,37i9dQZEVXbLxoIml4MYkT
+Kingdom of Thailand,TH,15.5,101,37i9dQZEVXbMnz8KIWsvf9
+Republic of Turkey,TR,39,35,37i9dQZEVXbIVYVBNw9D5K
+Taiwan,TW,24,121,37i9dQZEVXbMnZEatlMSiu
+United States,US,39.76,-98.5,37i9dQZEVXbLRQDuF5jeBp
+Oriental Republic of Uruguay,UY,-33,-56,37i9dQZEVXbMJJi3wgRbAy
+Socialist Republic of Vietnam,VN,16.16667,107.83333,37i9dQZEVXbLdGSmz6xilI
+Republic of South Africa,ZA,-29,24,37i9dQZEVXbMH2jvi6jvjk

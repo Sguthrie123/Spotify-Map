@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="UTF-8">
+    <title>Spotify - Global Top Song</title>
+
+    <!-- plotly -->
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <!-- Bootstrap stylesheet -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <!-- Leaflet JS & CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.3/dist/leaflet.css"
+    integrity="sha512-Rksm5RenBEKSKFjgI3a41vrjkw4EVPlJ3+OiI65vTjIdo9brlAacEuKOiQ5OFh7cOI1bkDwLqdLw3Zg0cRJAAQ=="
+    crossorigin=""/>
+    <script src="https://unpkg.com/leaflet@1.3.3/dist/leaflet.js"
+    integrity="sha512-tAGcCfR4Sc5ZP5ZoVz0quoZDYX5aCtEm/eu1KhSLj2c9eFrylXZknQYmxUssFaVJKvvc0dJQixhGjG2yXWiV9Q=="
+    crossorigin=""></script>
+
+    <!-- d3 JS -->
+    <script src="https://d3js.org/d3.v4.min.js"></script>
+
+    <!-- Marker Cluster JS & CSS -->
+    <script type="text/javascript" src="https://unpkg.com/leaflet.markercluster@1.0.3/dist/leaflet.markercluster.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://unpkg.com/leaflet.markercluster@1.0.3/dist/MarkerCluster.css">
+    <link rel="stylesheet" type="text/css" href="https://unpkg.com/leaflet.markercluster@1.0.3/dist/MarkerCluster.Default.css">
+
+    <!-- chart.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.bundle.js"></script>
+
+
+
+    <!-- Our CSS -->
+    <link rel="stylesheet" type="text/css" href="static/css/style.css">
+    <style>
+
+      html {
+        scroll-behavior: smooth;
+      }
+    </style>
+  </head>
+  <body>
+    <div class='auto-margin' id="section1">
+      <h1>Spotify - Top Songs Globally</h1>
+      <h4>Click a marker and the country name to view it's breakdown!</h4>
+      <div id="map"></div>
+    </div>
+
+    <div class="container auto-margin" id="section2">
+      <div class="row">
+        <h2>Top 50 Playlist and Song Analysis</h2>
+      </div>
+      <div class="row">
+        <a class="btn btn-outline-light" id="scroll" href="#section1" onclick="scroll_element()">Scroll To Map</a>
+      </div>
+      <div class="row"></div>
+      <div class="row">
+        <div class="col-md-6">
+          <div class="embed-responsive embed-responsive-16by9" id="playlist"></div>
+        </div>
+        <div class="col-md-6 ">
+          <canvas id="song1" style="height: 1px; width: auto;"></canvas>
+          <canvas id="song2" style="height:1px; width: auto; display: none;"></canvas>
+          <canvas id="song3" style="height: 1px; width: auto; display: none;"></canvas>
+        </div>
+      </div>
+      <div class="row justify-content-end">
+        <div class="col-5">
+          <label for="selSong">Song No:</label>
+          <select id="selSong" onchange="optionChanged(this.value)">
+            <option value="song1">1</option>
+            <option value="song2">2</option>
+            <option value="song3">3</option>
+          </select>
+        </div>
+      </div>
+
+
+
+      <div class="card mb-3" >
+        <div id='danceability'></div>
+        <div class="card-body">
+          <h5 class="card-title">Danceability</h5>
+          <p class="card-text">Clear to see that most of the tracks are considered danceable from values higher than 0.5. As you cann see over 90% are considered dancable to very danceable if we group them by
+            <br>
+            danceabilty >= 0.75 ---> Very danceable
+            <br>
+            danceabilty >= 0.50 - 0.75 ---> Regular danceable
+            <br>
+            danceabilty < 0.50 ---> Not danceable at all</p>
+        </div>
+      </div>
+  
+      <div class="card mb-3" style="background-color: slategrey;" >
+        <div id='energy'></div>
+        <div class="card-body">
+          <h5 class="card-title">Energy</h5>
+          <p class="card-text">As you can see from the graph a majority of the songs in group between the 0.60 to 0.80. If we group them like we did for the danceability we will see that about 80 percent fall into the regular / very eneregetic catergories.</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-header">
+          <b>Element Description</b>
+        </div>
+        <div class="card-body">
+          <blockquote class="blockquote mb-0">
+            <p>
+              <b>danceability</b> = Danceability describes how suitable a track is for dancing based on a combination of musical elements including tempo rhythm stability, beat strength, and overall regularity. A value of 0.0 is least danceable and 1.0 is most danceable. <br><br>
+              <b>Energy</b> is a measure from 0.0 to 1.0 and represents a perceptual measure of intensity and activity. Typically, energetic tracks feel fast, loud, and noisy. For example, death metal has high energy, while a Bach prelude scores low on the scale. Perceptual features contributing to this attribute include dynamic range, perceived loudness, timbre, onset rate, and general entropy.<br><br>
+              <b>loudness</b> = The overall loudness of a track in decibels (dB). Loudness values are averaged across the entire track and are useful for comparing relative loudness of tracks. Loudness is the quality of a sound that is the primary psychological correlate of physical strength (amplitude). Values typical range between -60 and 0 db.<br><br>
+              <b>speechiness</b> = Speechiness detects the presence of spoken words in a track. The more exclusively speech-like the recording (e.g. talk show, audio book, poetry), the closer to 1.0 the attribute value. Values above 0.66 describe tracks that are probably made entirely of spoken words. Values between 0.33 and 0.66 describe tracks that may contain both music and speech, either in sections or layered, including such cases as rap music. Values below 0.33 most likely represent music and other non-speech-like tracks.<br><br>
+              <b>acousticness</b> = A confidence measure from 0.0 to 1.0 of whether the track is acoustic. 1.0 represents high confidence the track is acoustic.<br><br>
+              <b>instrumentalness</b> = Predicts whether a track contains no vocals. "Ooh" and "aah" sounds are treated as instrumental in this context. Rap or spoken word tracks are clearly "vocal". The closer the instrumentalness value is to 1.0, the greater likelihood the track contains no vocal content. Values above 0.5 are intended to represent instrumental tracks, but confidence is higher as the value approaches 1.0.<br><br>
+              <b>liveness</b> = Detects the presence of an audience in the recording. Higher liveness values represent an increased probability that the track was performed live. A value above 0.8 provides strong likelihood that the track is live. <br><br>
+              <b>valence</b> = A measure from 0.0 to 1.0 describing the musical positiveness conveyed by a track. Tracks with high valence sound more positive (e.g. happy, cheerful, euphoric), while tracks with low valence sound more negative (e.g. sad, depressed, angry). <br><br>
+              </p>
+        </div>
+      </div>
+      <br>
+
+    </div>
+
+    <script type="text/javascript" src="static/js/config.js"></script>
+    <script type="text/javascript" src="static/js/logic.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  
+  </body>
+</html>
