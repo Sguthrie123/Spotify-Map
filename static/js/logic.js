@@ -18,7 +18,7 @@ L.tileLayer(MAP_URL, {
 	accessToken: API_KEY
 }).addTo(myMap);
 
-d3.csv("Spotify-Map/static/js/LatLong.txt", function(data) {
+d3.csv("https://sguthrie123.github.io/Spotify-Map/static/js/LatLong.txt", function(data) {
 	console.log(data);
     for(var i = 0; i < data.length; i++){
     	country.push(data[i].Country);
@@ -52,7 +52,7 @@ d3.csv("Spotify-Map/static/js/LatLong.txt", function(data) {
 		var iframe = document.createElement('iframe');
 		iframe.src = "https://open.spotify.com/embed/playlist/" + uri;
 		embed_play.appendChild(iframe);
-		d3.json("Spotify-Map/static/js/data.json", function(error, data){
+		d3.json("https://sguthrie123.github.io/Spotify-Map/static/js/data.json", function(error, data){
 			// console.log(data);
 			topsongs = data;
 			for (var play_list in topsongs){
@@ -207,7 +207,7 @@ function scroll_element() {
 	console.log('block');
 }
 
-d3.json("Spotify-Map/static/js/data.json", function(error, data){
+d3.json("https://sguthrie123.github.io/Spotify-Map/static/js/data.json", function(error, data){
 	console.log(data);
 
 	
